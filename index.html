@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+	<title>Door Game</title>
+
+
+</head>
+<body class="text-center overflow-visible"></body>
+    <!-- <h1 class="text-center">Monty Hall Problem</h1> -->
+    <h1 id="game-title" class="text-center my-3">Monty Hall Game</h1>
+
+    <h3 id="status" class="text-center my-2 h4">Let's Play a game?</h3>
+
+    <h5 id="doors-opened-count" class="text-center">Doors Opened: <span id="doors-opened">0</span></h5>
+        <div class="text-center">
+            <img class="mx-1 mx-lg-4 my-1 door" id="Door 1">
+            <img class="mx-1 mx-lg-4 my-1 door" id="Door 2">
+            <img class="mx-1 mx-lg-4 my-1 door" id="Door 3">
+        </div>
+
+        <div class="row jusity-content-center text-center my-3">
+            <div class="col-12">
+                <button id="start-button" class="btn btn-info fw-bold text-white">Start Game</button>
+            </div>
+        </div>
+
+
+        <div class="text-center mb-2">
+            <div class="d-flex justify-content-center flex-col">
+
+            <div class="mx-4 border border-dark"><p class="my-2 mx-2 d-inline fw-bold">Rounds Played</p> <span id="playcount" class="d-block bg-secondary fw-bold text-white fs-3">0</span></div>
+            <div class="mx-4 border border-dark"><p class="my-2 mx-2 d-inline fw-bold">Rounds Won</p> <span id="wincount" class="d-block bg-secondary fw-bold text-white fs-3">0</span></div>
+            </div>
+
+            <div class="d-flex justify-content-center mt-3">
+            <div class="border border-dark">
+            <p class="my-0 fw-bold d-inline mx-2">Win Percentage(%)</p>
+                <div class="bg-secondary">
+                    <span id="winpercent" class="d-inline fw-bold text-white fs-3">0</span><span class="d-inline fw-bold text-white fs-3">%</span>
+                </div>
+            </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="mb-2 d-flex flex-md-row flex-column justify-content-center text-center">
+
+            <div class="border border-dark mx-md-2 my-2">
+                <h4>SWITCH</h4>
+            <div class="d-flex justify-content-center flex-col">
+
+            <div class="mx-4 border border-dark bg-info"><p class="my-2 mx-2 d-inline fw-bold">Rounds Played</p> <span id="switchPlayCount" class="d-block bg-secondary fw-bold text-white fs-3">0</span></div>
+            <div class="mx-4 border border-dark bg-info"><p class="my-2 mx-2 d-inline fw-bold">Rounds Won</p> <span id="switchWinCount" class="d-block bg-secondary fw-bold text-white fs-3">0</span></div>
+            </div>
+
+            <div class="d-flex justify-content-center mt-3">
+            <div class="border border-dark bg-info mb-2">
+            <p class="my-0 fw-bold d-inline mx-2">Win Percentage(%)</p>
+                <div class="bg-secondary">
+                    <span id="switchWinPercentage" class="d-inline fw-bold text-white fs-3">0</span><span class="d-inline fw-bold text-white fs-3">%</span>
+                </div>
+            </div>
+            </div>
+            </div>
+
+            <div class="border border-dark mx-md-2 my-2">
+                <h4>STAY</h4>
+            <div class="d-flex justify-content-center flex-col">
+
+            <div class="mx-4 border border-dark bg-info"><p class="my-2 mx-2 d-inline fw-bold">Rounds Played</p> <span id="stayPlayCount" class="d-block bg-secondary fw-bold text-white fs-3">0</span></div>
+            <div class="mx-4 border border-dark bg-info"><p class="my-2 mx-2 d-inline fw-bold">Rounds Won</p> <span id="stayWinCount" class="d-block bg-secondary fw-bold text-white fs-3">0</span></div>
+            </div>
+
+            <div class="d-flex justify-content-center mt-3">
+            <div class="border border-dark bg-info mb-2">
+            <p class="my-0 fw-bold d-inline mx-2">Win Percentage(%)</p>
+                <div class="bg-secondary">
+                    <span id="stayWinPercentage" class="d-inline fw-bold text-white fs-3">0</span><span class="d-inline fw-bold text-white fs-3">%</span>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <div id="scatterplot"></div>
+        </div>
+
+    <h1>Simulator</h1>
+
+        <!-- Button trigger modal -->
+
+        
+    <div class="mb-3" style="width: 300px; margin: auto">
+
+
+    <div>
+    <label for="numOfRounds" class="fw-bold text-black fs-3"># of Rounds: </label>
+    <input type="number" min="1" max="2000" name="numOfRounds" id="numOfRounds" value="100"> 
+    </div>
+    
+    <div>
+    <label class= "fw-bold text-black fs-3" for="strategy-type">Strategy: </label>
+    <select name="strategy-type" id="strategy-type">
+        <option value="stay">Stay</option>
+        <option value="switch">Switch</option>
+    </select>
+    </div>
+
+    <div>
+    <label class="fw-bold text-black fs-3" for="animate-toggle">Animate: </label>
+    
+    <input type="checkbox" id="animate-toggle">
+    </div>
+
+    <div>
+  <button class="btn btn-success fw-bold text-white" id="simulator" class="mt-4">Simulate</button>
+
+  <button class="btn btn-danger fw-bold text-white" id="stop-simulator">Stop simulation</button>
+  </div>
+  
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script defer type="text/javascript" src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg 
+    width="218" 
+    height="400"
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink= "http://www.w3.org/1999/xlink"
+    >
+  <rect width="218" height="400" fill="#5C4033" stroke="black" fill-opacity="1" stroke-opacity="1"/>
+  
+  <rect width="25" height="50" x="27" y="155" fill="grey" stroke="black" fill-opacity="1" stroke-opacity="1"/>
+  <rect width="60" height="15" x="32" y="165" fill="grey" stroke="black" fill-opacity="1" stroke-opacity="1"/>
+  <!-- <circle cx="40" cy="180" r="10" stroke="black" stroke-width="1" fill="#Ffdf00" /> -->
+</svg>

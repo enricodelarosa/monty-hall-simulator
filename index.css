@@ -1,0 +1,62 @@
+@font-face {
+    font-family: Bloomberg;
+    src: url("./resources/font/Blomberg-8MKKZ.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SnesItalic;
+    src: url("./resources/font/Blomberg-8MKKZ.otf") format("opentype");
+}
+
+#game-title {
+    font-family: Bloomberg;
+}
+
+#status {
+    font-family: SnesItalic;
+}
+
+h4, h1 {
+    font-family: SnesItalic;
+}
+
+#hs-label {
+    font-family: SnesItalic;
+}
+
+  @media only screen and (min-width: 501px){
+    .door {
+        width: 218px;
+        height: 400px;
+    }
+}
+
+
+@media only screen and (max-width: 500px ) and (min-width: 1px ){
+    .door {
+        width: 109px;
+        height: 200px;
+    }
+
+    #scatterplot {
+        width: 400px;
+    }
+
+
+  }  
+
+
+#doors-opened-count {
+    display: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
