@@ -90,6 +90,7 @@ function isRoundWin(win, didSwitch) {
     //console.log(`Rounds stayed and won ${roundsStayedAndWon}`);
 
 
+    updateChart();
 
 
 
@@ -431,8 +432,7 @@ document.getElementById('simulator').addEventListener('click', async (e) => {
         }
 
         await Play(doAnimate);
-        updateChart();
-
+        
     }
 
     document.getElementById('stop-simulator').style.display = 'none';
