@@ -485,12 +485,16 @@ var layout = {
     xaxis: {range: [0, maxLength], title: "# of Rounds"},
     yaxis: {range: [0, 100], title: "Win Rate"},  
     title: "Switch vs. Stay",
-    showlegend: true
-  };
+    showlegend: true,
+};
+
+const config = {
+    displayModeBar: false, // this is the line that hides the bar.
+};
 
 
 
-Plotly.newPlot("scatterplot", data, layout);
+Plotly.newPlot("scatterplot", data, layout, config);
 
 }
 

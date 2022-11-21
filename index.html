@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
-	<title>Door Game</title>
+	<title>Monty Hall Simulator</title>
 
 
 </head>
@@ -27,9 +27,12 @@
             <div class="col-12">
                 <button id="start-button" class="btn btn-info fw-bold text-white">Start Game</button>
             </div>
+            <div class="col-12">
+            <button class="btn btn-warning fw-bold text-white mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#stats" aria-expanded="false" aria-controls="stats">STRATEGY STATS</button>
+        </div>
         </div>
 
-
+        <div id="stats" class="collapse">
         <div class="text-center mb-2">
             <div class="d-flex justify-content-center flex-col">
 
@@ -46,10 +49,13 @@
             </div>
             </div>
 
+     
+
 
 
         </div>
 
+        
         <div class="mb-2 d-flex flex-md-row flex-column justify-content-center text-center">
 
             <div class="border border-dark mx-md-2 my-2">
@@ -89,6 +95,7 @@
         </div>
 
         </div>
+    </div>
 
         <div class="d-flex justify-content-center">
             <div id="scatterplot"></div>
